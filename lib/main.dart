@@ -1,54 +1,47 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const MyApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Layout Tutorial'),
-          centerTitle: true,
-        ),
-        body: const GamePage(),
-      ),
+    return const MaterialApp(
+      home: HomePage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
 
-class GamePage extends StatelessWidget {
-  const GamePage({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          // 5 صفوف
-          for (int row = 0; row < 5; row++)
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                // 5 أعمدة
-                for (int col = 0; col < 5; col++)
-                  Container(
-                    margin: const EdgeInsets.all(4),
-                    width: 45,
-                    height: 45,
-                    decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      border: Border.all(color: Colors.black),
-                    ),
-                  ),
-              ],
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Text(
+              'Talal Nawaf Al-Enzi',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-        ],
+            SizedBox(height: 10),
+            Text(
+              'Academic ID: 443229412',
+              style: TextStyle(
+                fontSize: 18,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
