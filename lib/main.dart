@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
             ),
             SizedBox(height: 10),
             Text(
-              'Academic ID: 443229412',
+              'Academic ID: 123456789',
               style: TextStyle(
                 fontSize: 18,
               ),
